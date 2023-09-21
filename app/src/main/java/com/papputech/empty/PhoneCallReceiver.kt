@@ -33,12 +33,12 @@ class PhoneCallReceiver : BroadcastReceiver() {
                 .build()
 
             val api = retrofit.create(AndroidTV::class.java)
-            val response: Response<Unit>? = null;
+            var response: Response<Unit>? = null;
             if (pause == 1){
-                val response = api.pauseTV()
+                response = api.pauseTV()
             }
             else {
-                val response = api.playTV()
+                response = api.playTV()
             }
             if (response!!.isSuccessful) {
                 CoroutineScope(Dispatchers.Main).launch {
