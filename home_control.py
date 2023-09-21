@@ -6,11 +6,14 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/pp', methods=['GET'])
+@app.route('/play', methods=['GET'])
 def play():
-    os.system('adb -s 192.168.1.161:5555 shell  input keyevent KEYCODE_MEDIA_PLAY_PAUSE')
-    # from pymsgbox import alert
-    # alert('பாருங்க பாருங்க')
+    os.system('adb -s 192.168.1.161:5555 shell  input keyevent KEYCODE_MEDIA_PLAY')
+    return 'success'
+
+@app.route('/pause', methods=['GET'])
+def pause():
+    os.system('adb -s 192.168.1.161:5555 shell  input keyevent KEYCODE_MEDIA_PAUSE')
     return 'success'
 
 if __name__ == '__main__':

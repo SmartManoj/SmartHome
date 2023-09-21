@@ -4,7 +4,10 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface AndroidTV {
-    @GET("pp")
-    suspend fun pnpTV(): Response<Unit>
+    @GET("pause")
+    suspend fun pauseTV(): Response<Unit>
+
+    @GET("play")
+    suspend fun playTV(): Response<Unit>
 
 }

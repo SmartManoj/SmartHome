@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                         .build()
 
                     val api = retrofit.create(AndroidTV::class.java)
-                    val response = api.pnpTV()
+                    val response = api.pauseTV()
                     if (response.isSuccessful) {
                         CoroutineScope(Dispatchers.Main).launch {
                             Toast.makeText(this@MainActivity, "Manual test successful", Toast.LENGTH_SHORT).show()
